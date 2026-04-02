@@ -4,17 +4,17 @@ import { Users } from "lucide-react";
 const team = [
   {
     name: "Diogo Silas",
-    role: "Fundador & Desenvolvedor Full Stack",
+    role: "Fundador · Setor Administrativo",
     initials: "DS",
   },
   {
     name: "Samuel Levi",
-    role: "Desenvolvedor Front-end",
+    role: "Fundador · Setor de Desenvolvimento",
     initials: "SL",
   },
   {
     name: "Nicolas Natário",
-    role: "Desenvolvedor Back-end",
+    role: "Fundador · Setor Criativo",
     initials: "NN",
   },
 ];
