@@ -1,27 +1,8 @@
 import { motion } from "framer-motion";
-import { Github, ArrowUpRight } from "lucide-react";
+import { Github, ArrowUpRight, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import projectVitae from "@/assets/project-vitae.jpg";
-import projectSpartan from "@/assets/project-spartan.jpg";
-
-const projects = [
-  {
-    title: "Focus Vitae",
-    subtitle: "Copiloto Pessoal",
-    desc: "Assistente inteligente que organiza sua rotina, metas e produtividade pessoal com IA integrada.",
-    img: projectVitae,
-    github: "https://github.com/ildevdio/Focusvitae",
-    tags: ["IA", "Produtividade", "Mobile"],
-  },
-  {
-    title: "Focus Spartan",
-    subtitle: "Gestão Ergonômica",
-    desc: "Sistema completo de monitoramento e gestão ergonômica para ambientes corporativos, promovendo saúde e bem-estar.",
-    img: projectSpartan,
-    github: "https://github.com/ildevdio/Spartan",
-    tags: ["Saúde", "Gestão", "Dashboard"],
-  },
-];
+import { Link } from "react-router-dom";
+import { projects } from "@/data/projects";
 
 const ProjectsSection = () => (
   <section id="projetos" className="py-28 bg-card relative">
@@ -42,7 +23,7 @@ const ProjectsSection = () => (
       </motion.div>
 
       <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-        {projects.map((p, i) => (
+        {projects.slice(0, 2).map((p, i) => (
           <motion.div
             key={p.title}
             initial={{ opacity: 0, y: 30 }}
@@ -73,17 +54,33 @@ const ProjectsSection = () => (
               <h3 className="text-xl font-display font-bold text-foreground">{p.title}</h3>
               <p className="text-xs text-dim mb-2 uppercase tracking-wider">{p.subtitle}</p>
               <p className="text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
-              <div className="mt-5">
-                <Button variant="hero-outline" size="sm" asChild>
-                  <a href={p.github} target="_blank" rel="noopener noreferrer">
-                    <Github className="w-4 h-4 mr-1" /> Ver no GitHub <ArrowUpRight className="w-3 h-3 ml-1" />
-                  </a>
-                </Button>
-              </div>
+              {p.github && (
+                <div className="mt-5">
+                  <Button variant="hero-outline" size="sm" asChild>
+                    <a href={p.github} target="_blank" rel="noopener noreferrer">
+                      <Github className="w-4 h-4 mr-1" /> Ver no GitHub <ArrowUpRight className="w-3 h-3 ml-1" />
+                    </a>
+                  </Button>
+                </div>
+              )}
             </div>
           </motion.div>
         ))}
       </div>
+
+      {/* Veja todos button */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="text-center mt-12"
+      >
+        <Button variant="hero-outline" size="lg" asChild>
+          <Link to="/projetos">
+            Veja todos <ArrowRight className="w-4 h-4 ml-1" />
+          </Link>
+        </Button>
+      </motion.div>
     </div>
   </section>
 );
