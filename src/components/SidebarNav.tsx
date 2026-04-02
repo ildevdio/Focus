@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { Home, Briefcase, FolderOpen, FileText, Mail, X, ArrowLeftRight, Menu } from "lucide-react";
+import { Home, Briefcase, FolderOpen, Users, FileText, Mail, X, ArrowLeftRight, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useSidebarPosition } from "@/components/SidebarContext";
 import focusLogo from "@/assets/focus-logo.jpeg";
@@ -8,6 +8,7 @@ const navItems = [
   { icon: Home, label: "Início", href: "#inicio" },
   { icon: Briefcase, label: "Serviços", href: "#servicos" },
   { icon: FolderOpen, label: "Projetos", href: "#projetos" },
+  { icon: Users, label: "Equipe", href: "#equipe" },
   { icon: FileText, label: "Orçamento", href: "#orcamento" },
   { icon: Mail, label: "Contato", href: "#contato" },
 ];
