@@ -1,34 +1,59 @@
 import projectVitae from "@/assets/project-vitae.jpg";
 import projectSpartan from "@/assets/project-spartan.jpg";
+import vitaeDashboard from "@/assets/vitae-dashboard.jpg";
+import vitaeFeatures from "@/assets/vitae-features.jpg";
+import spartanDashboard from "@/assets/spartan-dashboard.jpg";
+import spartanSetores from "@/assets/spartan-setores.jpg";
 
 export interface Project {
   title: string;
   subtitle: string;
   desc: string;
   img: string;
+  images: string[];
+  link?: string;
   github?: string;
   category: string;
   tags: string[];
+  features: string[];
 }
 
 export const projects: Project[] = [
   {
     title: "Focus Vitae",
     subtitle: "Copiloto Pessoal",
-    desc: "Assistente inteligente que organiza sua rotina, metas e produtividade pessoal com IA integrada. Planeje seu dia, defina metas e acompanhe seu progresso de forma intuitiva.",
+    desc: "Assistente inteligente que organiza sua rotina, metas e produtividade pessoal com IA integrada. Dashboard inteligente, agenda automatizada, controle financeiro e chat com IA — tudo em um único lugar para você evoluir todos os dias.",
     img: projectVitae,
+    images: [projectVitae, vitaeDashboard, vitaeFeatures],
+    link: "https://focus-vitae.vercel.app",
     github: "https://github.com/ildevdio/Focusvitae",
     category: "Aplicativos Mobile",
     tags: ["IA", "Produtividade", "Mobile"],
+    features: [
+      "Dashboard inteligente com métricas personalizadas",
+      "Agenda automatizada com lembretes",
+      "Chat com IA para produtividade",
+      "Controle financeiro com gráficos",
+      "Centro de estudos integrado",
+    ],
   },
   {
     title: "Focus Spartan",
     subtitle: "Gestão Ergonômica",
-    desc: "Sistema completo de monitoramento e gestão ergonômica para ambientes corporativos, promovendo saúde e bem-estar dos colaboradores com dashboards em tempo real.",
+    desc: "Sistema completo de monitoramento e gestão ergonômica para ambientes corporativos. Cadastro de empresas, setores e postos de trabalho, análises REBA/ROSA, distribuição de riscos, planos de ação e relatórios — tudo em dashboards interativos em tempo real.",
     img: projectSpartan,
+    images: [projectSpartan, spartanDashboard, spartanSetores],
+    link: "https://focus-spartan.vercel.app",
     github: "https://github.com/ildevdio/Spartan",
     category: "Desenvolvimento de Software",
     tags: ["Saúde", "Gestão", "Dashboard"],
+    features: [
+      "Dashboard com indicadores ergonômicos",
+      "Gestão de empresas, setores e postos",
+      "Análises REBA e ROSA integradas",
+      "Distribuição e monitoramento de riscos",
+      "Relatórios e planos de ação",
+    ],
   },
 ];
 
