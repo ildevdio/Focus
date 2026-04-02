@@ -1,11 +1,16 @@
 import { motion } from "framer-motion";
-import { Code, Shield, Smartphone, Database, Headphones } from "lucide-react";
+import { Code, Shield, Smartphone, Database, Headphones, Gamepad2 } from "lucide-react";
 
 const services = [
   {
     icon: Code,
     title: "Desenvolvimento de Software",
     desc: "Aplicações web e mobile sob medida, com foco em performance e escalabilidade.",
+  },
+  {
+    icon: Gamepad2,
+    title: "Games & Entretenimento",
+    desc: "Desenvolvimento de jogos, sistemas de RPG e experiências interativas para diversão e engajamento.",
   },
   {
     icon: Shield,
