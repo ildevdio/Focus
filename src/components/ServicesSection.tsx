@@ -8,6 +8,11 @@ const services = [
     desc: "Aplicações web e mobile sob medida, com foco em performance e escalabilidade.",
   },
   {
+    icon: Gamepad2,
+    title: "Games & Entretenimento",
+    desc: "Desenvolvimento de jogos, sistemas de RPG e experiências interativas para diversão e engajamento.",
+  },
+  {
     icon: Shield,
     title: "Segurança & Compliance",
     desc: "Proteção de dados, adequação à LGPD e auditorias de segurança digital.",
