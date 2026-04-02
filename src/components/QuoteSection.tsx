@@ -8,7 +8,6 @@ import { useToast } from "@/hooks/use-toast";
 
 const niches = [
   "Sistemas de Informação (SI)",
-  "Gestão Empresarial (ERP/CRM)",
   "E-commerce & Marketplace",
   "Saúde & Bem-estar",
   "Educação & EdTech",
