@@ -1,16 +1,11 @@
 import { motion } from "framer-motion";
-import { Code, BarChart3, Shield, Smartphone, Database, Headphones } from "lucide-react";
+import { Code, Shield, Smartphone, Database, Headphones } from "lucide-react";
 
 const services = [
   {
     icon: Code,
     title: "Desenvolvimento de Software",
     desc: "Aplicações web e mobile sob medida, com foco em performance e escalabilidade.",
-  },
-  {
-    icon: BarChart3,
-    title: "Sistemas de Gestão",
-    desc: "ERPs, CRMs e dashboards personalizados para otimizar seus processos corporativos.",
   },
   {
     icon: Shield,

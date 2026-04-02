@@ -8,7 +8,6 @@ import { useToast } from "@/hooks/use-toast";
 
 const niches = [
   "Sistemas de Informação (SI)",
-  "Gestão Empresarial (ERP/CRM)",
   "E-commerce & Marketplace",
   "Saúde & Bem-estar",
   "Educação & EdTech",
@@ -25,9 +24,14 @@ const QuoteSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const subject = encodeURIComponent(`Orçamento - ${selectedNiche || "Geral"}`);
+    const body = encodeURIComponent(
+      `Nome: ${formData.name}\nE-mail: ${formData.email}\nEmpresa: ${formData.company || "Não informada"}\nCategoria: ${selectedNiche || "Não selecionada"}\n\nMensagem:\n${formData.message}`
+    );
+    window.open(`mailto:diogoswc@gmail.com?subject=${subject}&body=${body}`, "_self");
     toast({
-      title: "Orçamento enviado!",
-      description: "Entraremos em contato em até 24 horas.",
+      title: "Redirecionando para seu e-mail...",
+      description: "O orçamento será enviado pelo seu cliente de e-mail.",
     });
     setFormData({ name: "", email: "", company: "", message: "" });
     setSelectedNiche("");
