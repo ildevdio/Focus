@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Code, Shield, Smartphone, Database, Headphones } from "lucide-react";
+import { Code, Shield, Smartphone, Database, Headphones, Gamepad2 } from "lucide-react";
 
 const services = [
   {
