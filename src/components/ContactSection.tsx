@@ -23,7 +23,7 @@ const ContactSection = () => (
 
       <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
         {[
-          { icon: Mail, title: "E-mail", info: "diogoswc@gmail.com", href: "mailto:diogoswc@gmail.com" },
+          { icon: Mail, title: "E-mail", info: "focus-solutions@outlook.com", href: "mailto:focus-solutions@outlook.com" },
           { icon: Phone, title: "Telefone", info: "(81) 98514-7293", href: "tel:+5581985147293" },
           { icon: Github, title: "GitHub", info: "github.com/ildevdio", href: "https://github.com/ildevdio" },
         ].map((c, i) => (

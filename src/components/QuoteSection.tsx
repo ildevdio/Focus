@@ -28,7 +28,7 @@ const QuoteSection = () => {
     const body = encodeURIComponent(
       `Nome: ${formData.name}\nE-mail: ${formData.email}\nEmpresa: ${formData.company || "Não informada"}\nCategoria: ${selectedNiche || "Não selecionada"}\n\nMensagem:\n${formData.message}`
     );
-    window.open(`mailto:diogoswc@gmail.com?subject=${subject}&body=${body}`, "_self");
+    window.open(`mailto:focus-solutions@outlook.com?subject=${subject}&body=${body}`, "_self");
     toast({
       title: "Redirecionando para seu e-mail...",
       description: "O orçamento será enviado pelo seu cliente de e-mail.",
