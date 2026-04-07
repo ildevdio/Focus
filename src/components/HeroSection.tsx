@@ -29,7 +29,7 @@ const HeroSection = () => {
             className="mb-8"
           >
             <div className="relative">
-              <img src={focusLogo} alt="Focus" className="h-28 w-28 md:h-36 md:w-36 rounded-3xl object-cover shadow-2xl shadow-background" />
+              <img src={focusLogo} alt="Focus" className="h-28 w-28 md:h-36 md:w-36 rounded-3xl object-cover shadow-2xl shadow-background grayscale brightness-125" />
               <div className="absolute -inset-1 rounded-3xl opacity-20 animate-pulse-glow"
                 style={{ background: "linear-gradient(135deg, hsl(0 0% 100% / 0.2), transparent)" }}
               />

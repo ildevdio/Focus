@@ -1,5 +1,6 @@
+import HeaderNav from "@/components/HeaderNav";
 import SidebarNav from "@/components/SidebarNav";
-import { SidebarProvider } from "@/components/SidebarContext";
+import { SidebarProvider, useSidebarPosition } from "@/components/SidebarContext";
 import HeroSection from "@/components/HeroSection";
 import ServicesSection from "@/components/ServicesSection";
 import ProjectsSection from "@/components/ProjectsSection";
@@ -8,11 +9,17 @@ import QuoteSection from "@/components/QuoteSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
-const Index = () => (
-  <SidebarProvider>
+const NavSelector = () => {
+  const { navMode } = useSidebarPosition();
+  return navMode === "header" ? <HeaderNav /> : <SidebarNav />;
+};
+
+const IndexContent = () => {
+  const { navMode } = useSidebarPosition();
+  return (
     <div className="min-h-screen bg-background">
-      <SidebarNav />
-      <main>
+      <NavSelector />
+      <main className={navMode === "header" ? "pt-20" : ""}>
         <HeroSection />
         <ServicesSection />
         <ProjectsSection />
@@ -22,6 +29,12 @@ const Index = () => (
         <Footer />
       </main>
     </div>
+  );
+};
+
+const Index = () => (
+  <SidebarProvider>
+    <IndexContent />
   </SidebarProvider>
 );
 

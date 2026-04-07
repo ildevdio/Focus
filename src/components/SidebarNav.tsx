@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { Home, Briefcase, FolderOpen, Users, FileText, Mail, X, ArrowLeftRight, Menu } from "lucide-react";
+import { Home, Briefcase, FolderOpen, Users, FileText, Mail, X, ArrowLeftRight, Menu, LayoutPanelTop } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useSidebarPosition } from "@/components/SidebarContext";
 import focusLogo from "@/assets/focus-logo.jpeg";
@@ -14,7 +14,7 @@ const navItems = [
 ];
 
 const SidebarNav = () => {
-  const { position, togglePosition, isOpen, setIsOpen } = useSidebarPosition();
+  const { position, togglePosition, isOpen, setIsOpen, toggleNavMode } = useSidebarPosition();
 
   return (
     <>
@@ -55,7 +55,7 @@ const SidebarNav = () => {
             {/* Header */}
             <div className="flex items-center justify-between p-6 pb-2">
               <div className="flex items-center gap-3">
-                <img src={focusLogo} alt="Focus" className="h-12 w-12 rounded-xl object-cover" />
+                <img src={focusLogo} alt="Focus" className="h-12 w-12 rounded-xl object-cover grayscale brightness-125" />
                 <div>
                   <span className="text-lg font-display font-bold text-foreground tracking-wide">Focus</span>
                   <span className="block text-[10px] uppercase tracking-[0.2em] text-dim">Soluções Corporativas</span>
@@ -93,7 +93,7 @@ const SidebarNav = () => {
             </nav>
 
             {/* Position toggle */}
-            <div className="p-4 border-t border-border">
+            <div className="p-4 border-t border-border flex flex-col gap-2">
               <Button
                 variant="ghost"
                 size="sm"
@@ -102,6 +102,15 @@ const SidebarNav = () => {
               >
                 <ArrowLeftRight className="w-4 h-4" />
                 Mover para {position === "left" ? "direita" : "esquerda"}
+              </Button>
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={toggleNavMode}
+                className="w-full gap-2 text-dim hover:text-foreground"
+              >
+                <LayoutPanelTop className="w-4 h-4" />
+                Mudar para Header
               </Button>
               <p className="text-[10px] text-center text-dim/50 mt-2">Modo de teste</p>
             </div>

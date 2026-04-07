@@ -20,12 +20,12 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    title: "Focus Vitae",
+    title: "Focus InVIta",
     subtitle: "Copiloto Pessoal",
     desc: "Assistente inteligente que organiza sua rotina, metas e produtividade pessoal com IA integrada. Dashboard inteligente, agenda automatizada, controle financeiro e chat com IA — tudo em um único lugar para você evoluir todos os dias.",
     img: projectVitae,
     images: [projectVitae, vitaeDashboard, vitaeFeatures],
-    link: "https://focus-vitae.vercel.app",
+    link: "https://focusinvita.vercel.app",
     github: "https://github.com/ildevdio/Focusvitae",
     category: "Aplicativos Mobile",
     tags: ["IA", "Produtividade", "Mobile"],
