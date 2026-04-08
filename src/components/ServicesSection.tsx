@@ -1,6 +1,12 @@
 import { motion } from "framer-motion";
 import { Code, Shield, Smartphone, Database, Headphones, Gamepad2 } from "lucide-react";
 import { GlowingCard } from "@/components/ui/glowing-card";
+import { useIsMobile } from "@/hooks/use-mobile";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
 
 const services = [
   {
@@ -35,45 +41,81 @@ const services = [
   },
 ];
 
-const ServicesSection = () => (
-  <section id="servicos" className="py-28 bg-background relative overflow-hidden section-blend-top section-blend-bottom">
-    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-px glow-line" />
+const ServicesSection = () => {
+  const isMobile = useIsMobile();
 
-    <div className="container mx-auto px-4">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="text-center mb-20"
-      >
-        <span className="text-xs font-semibold uppercase tracking-[0.2em] text-dim">O que fazemos</span>
-        <h2 className="text-3xl md:text-5xl font-display font-bold text-foreground mt-3">Nossos Serviços</h2>
-        <p className="text-dim mt-4 max-w-xl mx-auto leading-relaxed">
-          Soluções completas em tecnologia da informação para empresas de todos os portes.
-        </p>
-      </motion.div>
+  return (
+    <section id="servicos" className="py-28 bg-background relative overflow-hidden section-blend-top section-blend-bottom">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-px glow-line" />
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-        {services.map((s, i) => (
-          <motion.div
-            key={s.title}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.08 }}
+      <div className="container mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-20"
+        >
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-dim">O que fazemos</span>
+          <h2 className="text-3xl md:text-5xl font-display font-bold text-foreground mt-3">Nossos Serviços</h2>
+          <p className="text-dim mt-4 max-w-xl mx-auto leading-relaxed">
+            Soluções completas em tecnologia da informação para empresas de todos os portes.
+          </p>
+        </motion.div>
+
+        {isMobile ? (
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full -my-12"
           >
-            <GlowingCard className="h-full px-6 py-12 md:py-16 flex flex-col justify-center">
-              <div className="w-11 h-11 rounded-xl bg-accent flex items-center justify-center mb-5 group-hover:bg-glow-soft transition-colors duration-300">
-                <s.icon className="w-5 h-5 text-dim group-hover:text-foreground transition-colors duration-300" />
-              </div>
-              <h3 className="text-base font-semibold text-card-foreground mb-2 font-sans overflow-wrap-break-word break-words">{s.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed break-words">{s.desc}</p>
-            </GlowingCard>
-          </motion.div>
-        ))}
+            <CarouselContent className="-ml-4 py-12">
+              {services.map((s, i) => (
+                <CarouselItem key={s.title} className="pl-4 basis-[85%]">
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.05 }}
+                    className="h-full"
+                  >
+                    <GlowingCard className="h-full px-6 py-12 flex flex-col justify-center">
+                      <div className="w-11 h-11 rounded-xl bg-accent flex items-center justify-center mb-5 group-hover:bg-glow-soft transition-colors duration-300">
+                        <s.icon className="w-5 h-5 text-dim group-hover:text-foreground transition-colors duration-300" />
+                      </div>
+                      <h3 className="text-base font-semibold text-card-foreground mb-2 font-sans overflow-wrap-break-word break-words">{s.title}</h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed break-words">{s.desc}</p>
+                    </GlowingCard>
+                  </motion.div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
+        ) : (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {services.map((s, i) => (
+              <motion.div
+                key={s.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+              >
+                <GlowingCard className="h-full px-6 py-12 md:py-16 flex flex-col justify-center">
+                  <div className="w-11 h-11 rounded-xl bg-accent flex items-center justify-center mb-5 group-hover:bg-glow-soft transition-colors duration-300">
+                    <s.icon className="w-5 h-5 text-dim group-hover:text-foreground transition-colors duration-300" />
+                  </div>
+                  <h3 className="text-base font-semibold text-card-foreground mb-2 font-sans overflow-wrap-break-word break-words">{s.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed break-words">{s.desc}</p>
+                </GlowingCard>
+              </motion.div>
+            ))}
+          </div>
+        )}
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 export default ServicesSection;
