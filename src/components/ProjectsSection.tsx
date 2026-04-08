@@ -4,6 +4,8 @@ import { Github, ArrowUpRight, ArrowRight, ExternalLink, ChevronLeft, ChevronRig
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { projects } from "@/data/projects";
+import { FlameButton } from "@/components/ui/flame-button";
+import { GlowingCard } from "@/components/ui/glowing-card";
 
 const ImageCarousel = ({ images, title }: { images: string[]; title: string }) => {
   const [current, setCurrent] = useState(0);
@@ -48,7 +50,7 @@ const ImageCarousel = ({ images, title }: { images: string[]; title: string }) =
 };
 
 const ProjectsSection = () => (
-  <section id="projetos" className="py-28 bg-card relative">
+  <section id="projetos" className="py-28 bg-background relative overflow-hidden section-blend-top section-blend-bottom">
     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-px glow-line" />
 
     <div className="container mx-auto px-4">
@@ -73,50 +75,52 @@ const ProjectsSection = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.15 }}
-            className="group rounded-2xl overflow-hidden bg-background border border-border hover:border-dim/30 transition-all duration-500"
+            className="group"
           >
-            <div className="relative overflow-hidden h-56 md:h-80">
-              <ImageCarousel images={p.images} title={p.title} />
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent pointer-events-none" />
-            </div>
-            <div className="p-7 md:p-9">
-              <div className="flex items-center gap-2 mb-3">
-                {p.tags.map((t) => (
-                  <span key={t} className="text-[10px] font-medium uppercase tracking-wider px-2.5 py-1 rounded-full bg-accent text-dim border border-border">
-                    {t}
-                  </span>
-                ))}
+            <GlowingCard className="rounded-2xl overflow-hidden bg-background border border-border hover:border-dim/30 transition-all duration-500">
+              <div className="relative overflow-hidden h-56 md:h-80">
+                <ImageCarousel images={p.images} title={p.title} />
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent pointer-events-none" />
               </div>
-              <h3 className="text-xl md:text-2xl font-display font-bold text-foreground">{p.title}</h3>
-              <p className="text-xs text-dim mb-2 uppercase tracking-wider">{p.subtitle}</p>
-              <p className="text-sm text-muted-foreground leading-relaxed mb-5">{p.desc}</p>
+              <div className="px-8 py-12 md:py-16">
+                <div className="flex items-center gap-2 mb-3">
+                  {p.tags.map((t) => (
+                    <span key={t} className="text-[10px] font-medium uppercase tracking-wider px-2.5 py-1 rounded-full bg-accent text-dim border border-border">
+                      {t}
+                    </span>
+                  ))}
+                </div>
+                <h3 className="text-xl md:text-2xl font-display font-bold text-foreground break-words">{p.title}</h3>
+                <p className="text-xs text-dim mb-2 uppercase tracking-wider break-words">{p.subtitle}</p>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-5 break-words">{p.desc}</p>
 
-              <div className="grid sm:grid-cols-2 gap-2 mb-6">
-                {p.features.slice(0, 4).map((f) => (
-                  <div key={f} className="flex items-start gap-2 text-sm text-muted-foreground">
-                    <Check className="w-4 h-4 text-dim mt-0.5 shrink-0" />
-                    <span>{f}</span>
-                  </div>
-                ))}
-              </div>
+                <div className="grid sm:grid-cols-2 gap-2 mb-6">
+                  {p.features.slice(0, 4).map((f) => (
+                    <div key={f} className="flex items-start gap-2 text-sm text-muted-foreground">
+                      <Check className="w-4 h-4 text-dim mt-0.5 shrink-0" />
+                      <span>{f}</span>
+                    </div>
+                  ))}
+                </div>
 
-              <div className="flex flex-wrap gap-3">
-                {p.link && (
-                  <Button variant="hero-outline" size="sm" asChild>
-                    <a href={p.link} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="w-4 h-4 mr-1" /> Acessar Projeto <ArrowUpRight className="w-3 h-3 ml-1" />
-                    </a>
-                  </Button>
-                )}
-                {p.github && (
-                  <Button variant="ghost" size="sm" asChild className="text-dim hover:text-foreground">
-                    <a href={p.github} target="_blank" rel="noopener noreferrer">
-                      <Github className="w-4 h-4 mr-1" /> GitHub
-                    </a>
-                  </Button>
-                )}
+                <div className="flex flex-wrap gap-3">
+                  {p.link && (
+                    <Button variant="hero-outline" size="sm" asChild>
+                      <a href={p.link} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="w-4 h-4 mr-1" /> Acessar Projeto <ArrowUpRight className="w-3 h-3 ml-1" />
+                      </a>
+                    </Button>
+                  )}
+                  {p.github && (
+                    <Button variant="ghost" size="sm" asChild className="text-dim hover:text-foreground">
+                      <a href={p.github} target="_blank" rel="noopener noreferrer">
+                        <Github className="w-4 h-4 mr-1" /> GitHub
+                      </a>
+                    </Button>
+                  )}
+                </div>
               </div>
-            </div>
+            </GlowingCard>
           </motion.div>
         ))}
       </div>
@@ -127,11 +131,11 @@ const ProjectsSection = () => (
         viewport={{ once: true }}
         className="text-center mt-12"
       >
-        <Button variant="hero-outline" size="lg" asChild>
-          <Link to="/projetos">
+        <Link to="/projetos">
+          <FlameButton size="lg">
             Veja todos <ArrowRight className="w-4 h-4 ml-1" />
-          </Link>
-        </Button>
+          </FlameButton>
+        </Link>
       </motion.div>
     </div>
   </section>

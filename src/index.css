@@ -82,7 +82,18 @@
   }
 
   .glow-line {
-    background: linear-gradient(90deg, transparent, hsl(var(--glow) / 0.4), transparent);
+    background: linear-gradient(90deg, transparent, hsl(var(--glow) / 0.6), transparent);
+    filter: blur(2px);
+  }
+
+  .section-blend-top {
+    mask-image: linear-gradient(to bottom, transparent, black 150px);
+    -webkit-mask-image: linear-gradient(to bottom, transparent, black 150px);
+  }
+
+  .section-blend-bottom {
+    mask-image: linear-gradient(to top, transparent, black 150px);
+    -webkit-mask-image: linear-gradient(to top, transparent, black 150px);
   }
 
   .card-shine {
@@ -96,6 +107,14 @@
     background: linear-gradient(135deg, hsl(0 0% 100% / 0.03) 0%, transparent 50%);
     pointer-events: none;
   }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.animate-shimmer {
+  animation: shimmer 3s infinite linear;
 }
 
 html {

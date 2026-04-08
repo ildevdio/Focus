@@ -58,7 +58,7 @@ const SidebarNav = () => {
                 <img src={focusLogo} alt="Focus" className="h-12 w-12 rounded-xl object-cover grayscale brightness-125" />
                 <div>
                   <span className="text-lg font-display font-bold text-foreground tracking-wide">Focus</span>
-                  <span className="block text-[10px] uppercase tracking-[0.2em] text-dim">Soluções Corporativas</span>
+                  <span className="block text-[10px] uppercase tracking-[0.2em] text-dim">Soluções Tecnológicas</span>
                 </div>
               </div>
               <button onClick={() => setIsOpen(false)} className="p-2 rounded-lg hover:bg-accent transition-colors">
@@ -92,27 +92,16 @@ const SidebarNav = () => {
               ))}
             </nav>
 
-            {/* Position toggle */}
-            <div className="p-4 border-t border-border flex flex-col gap-2">
+            {/* Footer */}
+            <div className="p-6 border-t border-border">
               <Button
-                variant="ghost"
-                size="sm"
-                onClick={togglePosition}
-                className="w-full gap-2 text-dim hover:text-foreground"
+                className="w-full rounded-xl bg-foreground text-background font-bold h-12"
+                asChild
               >
-                <ArrowLeftRight className="w-4 h-4" />
-                Mover para {position === "left" ? "direita" : "esquerda"}
+                <a href="#contato" onClick={() => setIsOpen(false)}>
+                  Solicitar Orçamento
+                </a>
               </Button>
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={toggleNavMode}
-                className="w-full gap-2 text-dim hover:text-foreground"
-              >
-                <LayoutPanelTop className="w-4 h-4" />
-                Mudar para Header
-              </Button>
-              <p className="text-[10px] text-center text-dim/50 mt-2">Modo de teste</p>
             </div>
           </motion.aside>
         )}

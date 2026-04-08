@@ -15,11 +15,15 @@ const NavSelector = () => {
 };
 
 const IndexContent = () => {
-  const { navMode } = useSidebarPosition();
   return (
     <div className="min-h-screen bg-background">
-      <NavSelector />
-      <main className={navMode === "header" ? "pt-20" : ""}>
+      <div className="hidden lg:block">
+        <HeaderNav />
+      </div>
+      <div className="lg:hidden">
+        <SidebarNav />
+      </div>
+      <main className="lg:pt-20">
         <HeroSection />
         <ServicesSection />
         <ProjectsSection />

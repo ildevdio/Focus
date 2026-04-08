@@ -1,0 +1,9 @@
+{
+  "profile": "openai",
+  "env": {
+    "OPENAI_BASE_URL": "https://openrouter.ai/anthropic/claude-sonnet-4.6",
+    "OPENAI_MODEL": "anthropic/claude-sonnet-4.6",
+    "OPENAI_API_KEY": "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"
+  },
+  "createdAt": "2026-04-07T23:57:50.593Z"
+}

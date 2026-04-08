@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { GlowingButton } from "@/components/ui/glowing-button";
+import { FlameButton } from "@/components/ui/flame-button";
+import InteractiveGrid from "@/components/InteractiveGrid";
 import focusLogo from "@/assets/focus-logo.jpeg";
 import focusWordmark from "@/assets/focus-wordmark.png";
 
@@ -8,16 +11,9 @@ const HeroSection = () => {
   return (
     <section id="inicio" className="relative min-h-screen flex items-center overflow-hidden">
       {/* Abstract background */}
-      <div className="absolute inset-0 bg-background">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full opacity-[0.07]"
-          style={{ background: "radial-gradient(circle, hsl(220 60% 55%), transparent 70%)" }}
-        />
-        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] rounded-full opacity-[0.04]"
-          style={{ background: "radial-gradient(circle, hsl(0 0% 100%), transparent 70%)" }}
-        />
-        <div className="absolute inset-0 opacity-[0.03]"
-          style={{ backgroundImage: "linear-gradient(hsl(0 0% 100%) 1px, transparent 1px), linear-gradient(90deg, hsl(0 0% 100%) 1px, transparent 1px)", backgroundSize: "60px 60px" }}
-        />
+      {/* Abstract background */}
+      <div className="absolute inset-0 bg-background z-0">
+        <InteractiveGrid />
       </div>
 
       <div className="container relative z-10 mx-auto px-4 pt-24 pb-16">
@@ -52,10 +48,10 @@ const HeroSection = () => {
             className="inline-flex items-center gap-2 rounded-full border border-border bg-card/50 px-5 py-2 mb-8"
           >
             <Sparkles className="w-3.5 h-3.5 text-dim" />
-            <span className="text-xs font-medium uppercase tracking-[0.15em] text-dim">Soluções Corporativas Freelance</span>
+            <span className="text-xs font-medium uppercase tracking-[0.15em] text-dim">Soluções Tecnológicas Freelance</span>
           </motion.div>
 
-          <motion.h1
+        <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -63,7 +59,7 @@ const HeroSection = () => {
           >
             <span className="text-foreground">Tecnologia que</span>
             <br />
-            <span className="text-gradient">Impulsiona</span>
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-zinc-500 via-zinc-100 to-zinc-500 animate-shimmer bg-[length:200%_auto]">Impulsiona</span>
             <span className="text-foreground"> seu Negócio</span>
           </motion.h1>
 
@@ -82,14 +78,16 @@ const HeroSection = () => {
             transition={{ duration: 0.7, delay: 0.6 }}
             className="flex flex-col sm:flex-row gap-4"
           >
-            <Button variant="hero" size="lg" asChild>
-              <a href="#orcamento">
+            <a href="#orcamento">
+              <FlameButton className="text-sm px-6 py-4">
                 Solicitar Orçamento <ArrowRight className="ml-1 w-4 h-4" />
-              </a>
-            </Button>
-            <Button variant="hero-outline" size="lg" asChild>
-              <a href="#projetos">Ver Projetos</a>
-            </Button>
+              </FlameButton>
+            </a>
+            <a href="#projetos">
+              <FlameButton className="text-sm px-6 py-4">
+                Ver Projetos
+              </FlameButton>
+            </a>
           </motion.div>
 
           <motion.div

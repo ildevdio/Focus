@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Code, Shield, Smartphone, Database, Headphones, Gamepad2 } from "lucide-react";
+import { GlowingCard } from "@/components/ui/glowing-card";
 
 const services = [
   {
@@ -35,7 +36,7 @@ const services = [
 ];
 
 const ServicesSection = () => (
-  <section id="servicos" className="py-28 bg-background relative">
+  <section id="servicos" className="py-28 bg-background relative overflow-hidden section-blend-top section-blend-bottom">
     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-px glow-line" />
 
     <div className="container mx-auto px-4">
@@ -60,13 +61,14 @@ const ServicesSection = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.08 }}
-            className="group p-7 rounded-2xl bg-card border border-border hover:border-dim/30 card-shine transition-all duration-500"
           >
-            <div className="w-11 h-11 rounded-xl bg-accent flex items-center justify-center mb-5 group-hover:bg-glow-soft transition-colors duration-300">
-              <s.icon className="w-5 h-5 text-dim group-hover:text-foreground transition-colors duration-300" />
-            </div>
-            <h3 className="text-base font-semibold text-card-foreground mb-2 font-sans">{s.title}</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+            <GlowingCard className="h-full px-6 py-12 md:py-16 flex flex-col justify-center">
+              <div className="w-11 h-11 rounded-xl bg-accent flex items-center justify-center mb-5 group-hover:bg-glow-soft transition-colors duration-300">
+                <s.icon className="w-5 h-5 text-dim group-hover:text-foreground transition-colors duration-300" />
+              </div>
+              <h3 className="text-base font-semibold text-card-foreground mb-2 font-sans overflow-wrap-break-word break-words">{s.title}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed break-words">{s.desc}</p>
+            </GlowingCard>
           </motion.div>
         ))}
       </div>

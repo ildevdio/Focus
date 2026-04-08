@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
-import { Home, Briefcase, FolderOpen, Users, FileText, Mail, LayoutPanelLeft } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { useSidebarPosition } from "@/components/SidebarContext";
+import { Home, Briefcase, FolderOpen, Users, FileText, Mail } from "lucide-react";
+import { FlameButton } from "@/components/ui/flame-button";
 import focusLogo from "@/assets/focus-logo.jpeg";
 
 const navItems = [
@@ -14,8 +13,6 @@ const navItems = [
 ];
 
 const HeaderNav = () => {
-  const { toggleNavMode } = useSidebarPosition();
-
   return (
     <motion.header
       initial={{ y: -100, opacity: 0 }}
@@ -31,32 +28,33 @@ const HeaderNav = () => {
           />
           <div className="hidden sm:block">
             <span className="text-xl font-display font-bold text-foreground tracking-wide leading-none">Focus</span>
-            <span className="block text-[8px] uppercase tracking-[0.2em] text-muted-foreground mt-0.5">Soluções Corporativas</span>
+            <span className="block text-[8px] uppercase tracking-[0.2em] text-muted-foreground mt-0.5">Soluções Tecnológicas</span>
           </div>
         </div>
 
-        <nav className="hidden md:flex items-center gap-4">
+        <nav className="hidden md:flex items-center gap-2">
           {navItems.map((item) => (
-            <a
+            <motion.a
               key={item.href}
               href={item.href}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-white/5 px-4 py-2 rounded-lg transition-all duration-300"
+              whileHover={{ scale: 1.1, y: -2 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              className="text-sm font-bold text-dim hover:text-foreground px-4 py-2 transition-colors relative group"
             >
               {item.label}
-            </a>
+              <motion.span 
+                initial={{ scaleX: 0 }}
+                whileHover={{ scaleX: 1 }}
+                className="absolute bottom-1 left-4 right-4 h-px bg-foreground origin-left transition-transform duration-300"
+              />
+            </motion.a>
           ))}
         </nav>
 
         <div className="flex items-center gap-3">
-          <Button 
-            variant="ghost" 
-            size="sm" 
-            onClick={toggleNavMode}
-            className="rounded-full px-4 text-dim hover:text-foreground hover:bg-white/5 flex items-center gap-2"
-          >
-            <LayoutPanelLeft className="w-4 h-4" />
-            <span className="text-xs uppercase tracking-wider font-semibold">Sidebar</span>
-          </Button>
+          <FlameButton size="sm" variant="white" className="px-6">
+            Falar Conosco
+          </FlameButton>
         </div>
       </div>
     </motion.header>

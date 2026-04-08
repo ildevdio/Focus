@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
 import { Mail, Phone, Github } from "lucide-react";
+import { GlowingCard } from "@/components/ui/glowing-card";
 
 const ContactSection = () => (
-  <section id="contato" className="py-28 bg-card relative">
+  <section id="contato" className="py-28 bg-background relative overflow-hidden section-blend-top">
     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-px glow-line" />
 
     <div className="container mx-auto px-4">
@@ -36,13 +37,15 @@ const ContactSection = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.1 }}
-            className="flex flex-col items-center text-center p-8 rounded-2xl border border-border bg-background hover:border-dim/30 card-shine transition-all duration-300 group"
+            className="group"
           >
-            <div className="w-14 h-14 rounded-xl bg-accent flex items-center justify-center mb-5 group-hover:bg-glow-soft transition-colors duration-300">
-              <c.icon className="w-5 h-5 text-dim group-hover:text-foreground transition-colors" />
-            </div>
-            <h3 className="font-semibold text-foreground font-sans text-sm">{c.title}</h3>
-            <p className="text-xs text-dim mt-1">{c.info}</p>
+            <GlowingCard className="flex flex-col items-center justify-center text-center px-6 py-12 md:py-16 h-full bg-background">
+              <div className="w-14 h-14 rounded-xl bg-accent flex items-center justify-center mb-5 group-hover:bg-glow-soft transition-colors duration-300">
+                <c.icon className="w-5 h-5 text-dim group-hover:text-foreground transition-colors" />
+              </div>
+              <h3 className="font-semibold text-foreground font-sans text-sm break-words w-full">{c.title}</h3>
+              <p className="text-xs text-dim mt-1 break-words w-full">{c.info}</p>
+            </GlowingCard>
           </motion.a>
         ))}
       </div>
