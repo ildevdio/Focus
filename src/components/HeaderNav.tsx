@@ -21,11 +21,13 @@ const HeaderNav = () => {
     >
       <div className="container mx-auto px-4 h-20 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <img 
-            src={focusLogo} 
-            alt="Focus" 
-            className="h-10 w-10 rounded-lg object-cover grayscale brightness-125 hover:grayscale-0 transition-all duration-300" 
-          />
+          <div className="h-[52px] w-[52px] rounded-xl overflow-hidden shadow-lg flex items-center justify-center bg-card">
+            <img 
+              src={focusLogo} 
+              alt="Focus" 
+              className="h-full w-full object-cover scale-[1.8] brightness-110 contrast-110 transition-all duration-300" 
+            />
+          </div>
           <div className="hidden sm:block">
             <span className="text-xl font-display font-bold text-foreground tracking-wide leading-none">Focus</span>
             <span className="block text-[8px] uppercase tracking-[0.2em] text-muted-foreground mt-0.5">Soluções Tecnológicas</span>

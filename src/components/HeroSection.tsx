@@ -25,9 +25,21 @@ const HeroSection = () => {
             className="mb-8"
           >
             <div className="relative">
-              <img src={focusLogo} alt="Focus" className="h-28 w-28 md:h-36 md:w-36 rounded-3xl object-cover shadow-2xl shadow-background grayscale brightness-125" />
-              <div className="absolute -inset-1 rounded-3xl opacity-20 animate-pulse-glow"
-                style={{ background: "linear-gradient(135deg, hsl(0 0% 100% / 0.2), transparent)" }}
+              <img src={focusLogo} alt="Focus" className="h-28 w-28 md:h-36 md:w-36 rounded-3xl object-cover shadow-2xl shadow-background grayscale brightness-125 relative z-10 border-2 border-white/10" />
+              <motion.div 
+                animate={{ 
+                  opacity: [0.15, 0.3, 0.15],
+                  scale: [1, 1.08, 1]
+                }}
+                transition={{ 
+                  duration: 3, 
+                  repeat: Infinity, 
+                  ease: "easeInOut" 
+                }}
+                className="absolute -inset-1 rounded-3xl z-0 blur-xl"
+                style={{
+                  background: "radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%)"
+                }}
               />
             </div>
           </motion.div>
