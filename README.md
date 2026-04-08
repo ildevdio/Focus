@@ -1,4 +1,4 @@
-# 🚀 Focus - Soluções Tecnológicas
+# ✨ Focus - Soluções Tecnológicas
 
 > **Transformamos visão em realidade através da excelência técnica e design de alta fidelidade.**
 
@@ -45,7 +45,7 @@ Para garantir a melhor entrega, trabalhamos com o que há de mais avançado no d
 Tem um desafio tecnológico para o seu negócio? Nós temos a solução.
 
 - **Website**: [Focus Soluções](#)
-- **E-mail**: [contato@focus-solucoes.tech](mailto:contato@focus-solucoes.tech)
+- **E-mail**: [contato@focus-solucoes.tech](mailto:focus-solutions@outlook.com)
 
 ---
 
