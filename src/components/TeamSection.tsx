@@ -11,22 +11,22 @@ import {
 const team = [
   {
     name: "Diogo Silas",
-    role: "Administrativo",
+    role: "Administrativo | Desenvolvimento",
     initials: "DS",
   },
   {
     name: "Samuel Levi",
-    role: "Desenvolvimento",
+    role: "UI/UX | QA",
     initials: "SL",
   },
   {
     name: "Nicolas Natário",
-    role: "Criativo",
+    role: "Suporte | Desenvolvimento",
     initials: "NN",
   },
   {
     name: "Lucas Henrique",
-    role: "Desenvolvimento",
+    role: "Comercial | Dados",
     initials: "LH",
   },
 ];
@@ -55,7 +55,7 @@ const TeamSection = () => {
         {isMobile ? (
           <Carousel
             opts={{
-              align: "start",
+              align: "center",
               loop: true,
             }}
             className="w-full -my-12"
@@ -79,7 +79,7 @@ const TeamSection = () => {
                       <div className="flex flex-col gap-2 mt-auto">
                         <h3 className="text-xl md:text-2xl font-display font-bold text-foreground leading-tight">{member.name}</h3>
                         <p className="text-[9px] md:text-[10px] text-dim uppercase tracking-[0.2em] font-medium leading-relaxed">
-                          FUNDADOR · SETOR {member.role === "Administrativo" ? "ADMINISTRATIVO" : member.role === "Desenvolvimento" ? "DE DESENVOLVIMENTO" : "CRIATIVO"}
+                          FUNDADOR · {member.role.toUpperCase()}
                         </p>
                       </div>
                     </GlowingCard>
@@ -108,7 +108,7 @@ const TeamSection = () => {
                   <div className="flex flex-col gap-2 mt-auto">
                     <h3 className="text-xl md:text-2xl font-display font-bold text-foreground leading-tight">{member.name}</h3>
                     <p className="text-[9px] md:text-[10px] text-dim uppercase tracking-[0.2em] font-medium leading-relaxed">
-                      FUNDADOR · SETOR {member.role === "Administrativo" ? "ADMINISTRATIVO" : member.role === "Desenvolvimento" ? "DE DESENVOLVIMENTO" : "CRIATIVO"}
+                      FUNDADOR · {member.role.toUpperCase()}
                     </p>
                   </div>
                 </GlowingCard>

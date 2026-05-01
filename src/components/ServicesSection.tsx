@@ -65,7 +65,7 @@ const ServicesSection = () => {
         {isMobile ? (
           <Carousel
             opts={{
-              align: "start",
+              align: "center",
               loop: true,
             }}
             className="w-full -my-12"

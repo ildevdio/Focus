@@ -20,12 +20,12 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    title: "Focus InVIta",
+    title: "Focus InVita",
     subtitle: "Copiloto Pessoal",
     desc: "Assistente inteligente que organiza sua rotina, metas e produtividade pessoal com IA integrada. Dashboard inteligente, agenda automatizada, controle financeiro e chat com IA — tudo em um único lugar para você evoluir todos os dias.",
     img: projectVitae,
     images: [projectVitae, vitaeDashboard, vitaeFeatures],
-    link: "https://focusinvita.vercel.app",
+    link: "https://invita.focus-solutions.tech",
     github: "https://github.com/ildevdio/Focusvitae",
     category: "Aplicativos Mobile",
     tags: ["IA", "Produtividade", "Mobile"],
@@ -43,7 +43,7 @@ export const projects: Project[] = [
     desc: "Sistema completo de monitoramento e gestão ergonômica para ambientes corporativos. Cadastro de empresas, setores e postos de trabalho, análises REBA/ROSA, distribuição de riscos, planos de ação e relatórios — tudo em dashboards interativos em tempo real.",
     img: projectSpartan,
     images: [projectSpartan, spartanDashboard, spartanSetores],
-    link: "https://focus-spartan.vercel.app",
+    link: "https://spartan.focus-solutions.tech",
     github: "https://github.com/ildevdio/Spartan",
     category: "Desenvolvimento de Software",
     tags: ["Saúde", "Gestão", "Dashboard"],
