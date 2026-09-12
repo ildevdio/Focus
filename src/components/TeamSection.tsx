@@ -15,11 +15,6 @@ const team = [
     initials: "DS",
   },
   {
-    name: "Samuel Levi",
-    role: "UI/UX | QA",
-    initials: "SL",
-  },
-  {
     name: "Nicolas Natário",
     role: "Suporte | Desenvolvimento",
     initials: "NN",
@@ -89,7 +84,7 @@ const TeamSection = () => {
             </CarouselContent>
           </Carousel>
         ) : (
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-8 max-w-[1400px] mx-auto items-stretch">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-8 max-w-[1400px] mx-auto items-stretch">
             {team.map((member, i) => (
               <motion.div
                 key={member.name}

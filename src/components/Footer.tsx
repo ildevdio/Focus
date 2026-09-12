@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import focusWordmark from "@/assets/focus-wordmark.png";
-import focusLogo from "@/assets/focus-logo.jpeg";
+import focusWordmark from "@/assets/focus-logo.svg";
 import { X } from "lucide-react";
 
 const Footer = () => {

@@ -58,7 +58,7 @@ export const FlameButton = React.forwardRef<HTMLButtonElement, FlameButtonProps>
     };
 
     const variantClasses = {
-      purple: "bg-background border-white/20 text-foreground hover:border-purple-500/50 hover:shadow-[0_8px_30px_rgba(168,85,247,0.3)]",
+      purple: "bg-purple-900 border-white/20 text-foreground hover:border-purple-500/50 hover:shadow-[0_8px_30px_rgba(168,85,247,0.3)]",
       white: "bg-white border-transparent text-black font-bold hover:shadow-[0_8px_30px_rgba(255,255,255,0.4)]"
     };
 

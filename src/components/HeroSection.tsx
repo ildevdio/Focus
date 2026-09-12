@@ -4,8 +4,7 @@ import { Button } from "@/components/ui/button";
 import { GlowingButton } from "@/components/ui/glowing-button";
 import { FlameButton } from "@/components/ui/flame-button";
 import InteractiveGrid from "@/components/InteractiveGrid";
-import focusLogo from "@/assets/focus-logo.jpeg";
-import focusWordmark from "@/assets/focus-wordmark.png";
+import focusWordmark from "@/assets/focus-logo.svg";
 
 const HeroSection = () => {
   return (
@@ -18,39 +17,13 @@ const HeroSection = () => {
 
       <div className="container relative z-10 mx-auto px-4 pt-24 pb-16">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="mb-8"
-          >
-            <div className="relative">
-              <img src={focusLogo} alt="Focus" className="h-28 w-28 md:h-36 md:w-36 rounded-3xl object-cover shadow-2xl shadow-background grayscale brightness-125 relative z-10 border-2 border-white/10" />
-              <motion.div 
-                animate={{ 
-                  opacity: [0.15, 0.3, 0.15],
-                  scale: [1, 1.08, 1]
-                }}
-                transition={{ 
-                  duration: 3, 
-                  repeat: Infinity, 
-                  ease: "easeInOut" 
-                }}
-                className="absolute -inset-1 rounded-3xl z-0 blur-xl"
-                style={{
-                  background: "radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%)"
-                }}
-              />
-            </div>
-          </motion.div>
-
           <motion.img
             src={focusWordmark}
             alt="Focus"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="h-10 md:h-14 mb-4 opacity-90"
+            className="h-14 md:h-20 mb-4 opacity-90"
           />
 
           <motion.div
@@ -88,15 +61,15 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4"
+            className="flex flex-col gap-4"
           >
             <a href="#orcamento">
-              <FlameButton className="text-sm px-6 py-4">
+              <FlameButton className="text-sm px-6 py-4 w-full bg-black">
                 Solicitar Orçamento <ArrowRight className="ml-1 w-4 h-4" />
               </FlameButton>
             </a>
             <a href="#projetos">
-              <FlameButton className="text-sm px-6 py-4">
+              <FlameButton className="text-sm px-6 py-4 w-full bg-black">
                 Ver Projetos
               </FlameButton>
             </a>

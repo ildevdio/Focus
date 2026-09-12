@@ -23,7 +23,6 @@ Nossa equipe é formada por especialistas dedicados a diferentes pilares da exce
 | Membro | Setor | Especialidade |
 | :--- | :--- | :--- |
 | **Diogo Silas** | Administrativo | Estratégia de Negócios e Gestão de Operações |
-| **Samuel Levi** | Desenvolvimento | Arquitetura de Sistemas e Engenharia de Software |
 | **Nicolas Natário** | Criativo | Direção de Arte e Experiência do Usuário (UX/UI) |
 | **Lucas Henrique** | Desenvolvimento | Desenvolvimento Full-Stack e Otimização de Performance |
 

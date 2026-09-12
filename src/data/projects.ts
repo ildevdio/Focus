@@ -1,9 +1,6 @@
-import projectVitae from "@/assets/project-vitae.jpg";
-import projectSpartan from "@/assets/project-spartan.jpg";
-import vitaeDashboard from "@/assets/vitae-dashboard.jpg";
-import vitaeFeatures from "@/assets/vitae-features.jpg";
-import spartanDashboard from "@/assets/spartan-dashboard.jpg";
-import spartanSetores from "@/assets/spartan-setores.jpg";
+import focuslogin from "@/assets/focuslogin.jpg";
+import focuscommerce from "@/assets/focuscommerce.jpg";
+import focusplataform from "@/assets/focusplataform.jpg";
 
 export interface Project {
   title: string;
@@ -20,39 +17,21 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    title: "Focus InVita",
-    subtitle: "Copiloto Pessoal",
-    desc: "Assistente inteligente que organiza sua rotina, metas e produtividade pessoal com IA integrada. Dashboard inteligente, agenda automatizada, controle financeiro e chat com IA — tudo em um único lugar para você evoluir todos os dias.",
-    img: projectVitae,
-    images: [projectVitae, vitaeDashboard, vitaeFeatures],
-    link: "https://invita.focus-solutions.tech",
-    github: "https://github.com/ildevdio/Focusvitae",
-    category: "Aplicativos Mobile",
-    tags: ["IA", "Produtividade", "Mobile"],
+    title: "Focus e-shop",
+    subtitle: "Sua plataforma de vendas e gestão e-commerce",
+    desc: "Construa sua loja virtual de maneira facilitada e tenha total controle sobre suas vendas. Plataforma completa com catálogo, gestão de pedidos, relatórios e central de delivery e entregas.",
+    img: focuslogin,
+    images: [focuslogin, focuscommerce, focusplataform],
+    link: "https://shop.focus-solutions.tech",
+    category: "Plataformas de Vendas",
+    tags: ["Gestão", "Vendas", "Web", "Mobile"],
     features: [
-      "Dashboard inteligente com métricas personalizadas",
-      "Agenda automatizada com lembretes",
-      "Chat com IA para produtividade",
-      "Controle financeiro com gráficos",
-      "Centro de estudos integrado",
-    ],
-  },
-  {
-    title: "Focus Spartan",
-    subtitle: "Gestão Ergonômica",
-    desc: "Sistema completo de monitoramento e gestão ergonômica para ambientes corporativos. Cadastro de empresas, setores e postos de trabalho, análises REBA/ROSA, distribuição de riscos, planos de ação e relatórios — tudo em dashboards interativos em tempo real.",
-    img: projectSpartan,
-    images: [projectSpartan, spartanDashboard, spartanSetores],
-    link: "https://spartan.focus-solutions.tech",
-    github: "https://github.com/ildevdio/Spartan",
-    category: "Desenvolvimento de Software",
-    tags: ["Saúde", "Gestão", "Dashboard"],
-    features: [
-      "Dashboard com indicadores ergonômicos",
-      "Gestão de empresas, setores e postos",
-      "Análises REBA e ROSA integradas",
-      "Distribuição e monitoramento de riscos",
-      "Relatórios e planos de ação",
+      "Atendimento de IA/Chatbot via API WhatsApp",
+      "Gestão de pedidos",
+      "Catálogo facilitado",
+      "Relatórios",
+      "Central de delivery e entregas",
+      "Plataforma customizável",
     ],
   },
 ];
@@ -65,4 +44,5 @@ export const categories = [
   "Aplicativos Mobile",
   "Integração de Sistemas",
   "Consultoria & Suporte",
+  "Plataformas de Vendas",
 ];

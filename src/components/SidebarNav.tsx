@@ -2,7 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Home, Briefcase, FolderOpen, Users, FileText, Mail, X, ArrowLeftRight, Menu, LayoutPanelTop } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useSidebarPosition } from "@/components/SidebarContext";
-import focusLogo from "@/assets/focus-logo.jpeg";
+import focusLogo from "@/assets/focus-logo.svg";
 
 const navItems = [
   { icon: Home, label: "Início", href: "#inicio" },

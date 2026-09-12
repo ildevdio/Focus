@@ -78,7 +78,7 @@ const ProjectsSection = () => (
             className="group"
           >
             <GlowingCard className="rounded-2xl overflow-hidden bg-background border border-border hover:border-dim/30 transition-all duration-500">
-              <div className="relative overflow-hidden h-56 md:h-80">
+              <div className="relative overflow-hidden h-72 md:h-[480px]">
                 <ImageCarousel images={p.images} title={p.title} />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent pointer-events-none" />
               </div>

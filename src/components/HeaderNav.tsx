@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Home, Briefcase, FolderOpen, Users, FileText, Mail } from "lucide-react";
 import { FlameButton } from "@/components/ui/flame-button";
-import focusLogo from "@/assets/focus-logo.jpeg";
+import focusLogo from "@/assets/focusicon.jpeg";
 
 const navItems = [
   { icon: Home, label: "Início", href: "#inicio" },
